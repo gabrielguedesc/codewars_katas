@@ -1,0 +1,41 @@
+{
+  "name": "tdd_codewars",
+  "version": "1.0.0",
+  "description": "TDD challenges codewars.com",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/eslint src/*.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "functions": 100,
+    "lines": 100,
+    "check-coverage": true,
+    "reporter": [
+     "text",
+     "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "keywords": [],
+  "author": "Gabriel Guedes <g4brielguedes@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^4.1.0",
+    "nyc": "^11.4.1"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
+}
